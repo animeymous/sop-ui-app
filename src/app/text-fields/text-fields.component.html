@@ -1,0 +1,26 @@
+<div class="mt-6 mb-6">
+    <div>
+          <h6 class=""> {{heading || '-'}} </h6>
+          <input type="text"  *ngIf="type == 'input' || type == 'dropdown'" name={{heading}} class="form-control" placeholder="Your Answer" (change)="textField($event)" value={{value}} aria-describedby="basic-addon1">
+          <div *ngIf="type == 'radio'" key=index >
+            <p>
+              <label class="d-inline">YES</label>
+              <input *ngIf="type == 'radio'" type="radio" id={{index}} name={{heading}} value="Yes" (change)="textField($event)"/>
+            </p>
+            <p>
+              <label class="d-inline">No</label>
+              <input *ngIf="type == 'radio'" type="radio" id={{index}} name={{heading}} value="No" (change)="textField($event)"/>
+            </p>
+          </div>
+          <!-- <div class="dropdown" *ngIf="type == 'dropdown'">
+            <button class="btn btn-secondary dropdown-toggle bg-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div> -->
+    </div>
+</div>
